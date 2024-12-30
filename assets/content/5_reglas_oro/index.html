@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/animate.css">
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="contenido">
+        <main>
+            <header class="titulo animate__animated animate__fadeInDown">
+                <p class="titulo__texto">Recuerda las <span>5 reglas de oro</span></p>
+                <p class="titulo__texto titulo__texto--bold">
+                    Estas son reglas esenciales para trabajar de manera segura con instalaciones eléctricas
+                </p>
+            </header>
+            <section class="haz-click">
+                <p class="haz-click__texto">Haz clic en cada una para conocerlas</p>
+            </section>
+            <section class="interactiva ">
+                <div class="interactiva__info">
+                    <div class="info" id="info2">
+                        <div class="info__body">
+                            <p class="info__texto">
+                                Es fundamental bloquear la fuente de alimentación.
+                            </p> 
+                        </div>
+                    </div>
+
+                    <div class="info" id="info4">
+                        <div class="info__body">
+                            <p class="info__texto">
+                                Después de comprobar la ausencia de tensión, se debe conectar la instalación a tierra. Esto proporciona una protección adicional en caso de que la instalación se energice accidentalmente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactiva__escenario escenario">
+                    <img src="./assets/img/escenario.png" alt="" class="escenario__fondo">
+
+                    <a class="escenario__boton boton-mostrar-info" data-info="1">
+                        <img src="./assets/img/boton1.png" alt="" class="escenario__img">
+                    </a>
+
+                    <a class="escenario__boton boton-mostrar-info" data-info="2">
+                        <img src="./assets/img/boton2.png" alt="" class="escenario__img">
+                    </a>
+
+                    <a class="escenario__boton boton-mostrar-info" data-info="3">
+                        <img src="./assets/img/boton3.png" alt="" class="escenario__img">
+                    </a>
+
+                    <a class="escenario__boton boton-mostrar-info" data-info="4">
+                        <img src="./assets/img/boton4.png" alt="" class="escenario__img">
+                    </a>
+
+                    <a class="escenario__boton boton-mostrar-info" data-info="5">
+                        <img src="./assets/img/boton5.png" alt="" class="escenario__img">
+                    </a>
+                </div>
+                <div class="interactiva__info">
+                    <div class="info" id="info1">
+                        <div class="info__body">
+                            <p class="info__texto">
+                                Antes de realizar cualquier trabajo eléctrico asegúrate de desconectar la fuente de energía. esto previene accidentes y garantiza tu seguridad.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info" id="info3">
+                        <div class="info__body">
+                            <p class="info__texto">
+                                Antes de iniciar cualquier trabajo, verifica que no haya tensión en el circuito o instalación. Esto se hace con el detector de tensión homologado, asegurando que no hay riesgo de descarga eléctrica.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info" id="info5">
+                        <div class="info__body">
+                            <p class="info__texto">
+                                Coloca barreras, señales y avisos claros para indicar que se están realizando trabajos eléctricos y asegúrate de que solo personal autorizado tenga acceso a esta área.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal off">
+                    <div class="modalsito">
+                    <p class="modal_texto">Seguir las <span>5 reglas de oro</span> no solo es una obligación legal, sino también una práctica esencial para proteger tu vida y la de tus compañeros</p>
+                    <p class="info__texto--azul">
+                        <span>¡Trabajemos de manera segura!</span>
+                    </p>
+                    <p class="modal_texto">En <span>CEO</span> la seguridad la construimos entre todos</p>
+                    <button id="continuar-btn" class="continuar-btn-off" onclick="clickContinuar()">
+                        Continuar
+                    </button>
+                    </div>
+                </div>
+
+            </section>
+
+
+            
+        </main>
+
+
+
+
+
+    </div>
+    <audio id="inicio" autoplay>
+        <source src="./assets/audio/inicio.mp3" type="audio/mp3">
+    </audio>
+    <audio id="final">
+        <source src="./assets/audio/final.mp3" type="audio/mp3">
+    </audio>
+    <audio id="audios" autoplay>
+        <source src="" type="audio/mp3">
+    </audio>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

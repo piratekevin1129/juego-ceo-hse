@@ -1,0 +1,81 @@
+@media (max-width: 1550px) {
+    #header {
+        font-size: 40px;
+    }
+
+    .modal-txt,
+    .info {
+        font-size: 17px;
+    }
+
+    .modal-titulo,
+    .titulo {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 700px) {
+    #header {
+        font-size: 30px;
+        padding-top: 60px;
+    }
+
+    .img {
+        width: 100%;
+        height: unset;
+        right: unset;
+        bottom: unset;
+        top: 165px;
+        position: absolute;
+        overflow: unset;
+    }
+
+    .img img:first-child {
+        max-height: unset;
+        max-width: 100%;
+    }
+
+    .info {
+        width: 95%;
+        aspect-ratio: 250 / 200;
+        bottom: unset;
+        left: unset;
+        right: unset;
+        top: 100%;
+    }
+
+    .modal-animado {
+        height: calc(100% - 50px);
+        top: 0;
+    }
+
+    .modal-animado {
+        height: calc(100% - 50px);
+        top: 0;
+    }
+
+    .modal-titulo p {
+        margin: 5px 0;
+    }
+
+    .modal-txt {
+        width: 95%;
+        justify-content: flex-start;
+    }
+
+    .modal-img {
+        height: 30%;
+    }
+
+    #help-btn {
+        top: unset;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    #continuar-btn,
+    #sonido-btn {
+        top: unset;
+        bottom: 5px;
+    }
+}

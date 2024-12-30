@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../../css/fonts.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+    <link href="../assets/css/continuar.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="pregunta-cont-4" class="pregunta-cont-4-out">
+        <div id="pregunta-4-enunciado">Lorem impsu</div>
+        <div id="pregunta-4-columnas">
+            <div id="pregunta-4-col1"></div>
+            <div id="pregunta-4-col2"></div>
+        </div>
+
+        <button id="pregunta-4-btn" class="pregunta-continuar-btn pregunta-continuar-btn-on" onclick="clickContinuar()">Continuar</button>
+    </div>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        var url = window.location.href
+        var url_splited = url.split("?data=")
+        var url_data = Number(url_splited[url_splited.length-1])
+
+        var over_mp3 = null
+        var click_mp3 = null
+        var wrong_mp3 = null
+        var correct_mp3 = null
+
+        actual_pregunta_data = data_preguntas[url_data-1]
+        window.onload = function(){
+            over_mp3 = new Audio('../../sounds/over.mp3')
+            over_mp3.onloadeddata = function(){
+                click_mp3 = new Audio('../../sounds/click.mp3')
+                click_mp3.onloadeddata = function(){
+                    wrong_mp3 = new Audio('../../sounds/wrong.mp3')
+                    wrong_mp3.onloadeddata = function(){
+                        correct_mp3 = new Audio('../../sounds/correct.mp3')
+                        correct_mp3.onloadeddata = function(){
+                            initGame()
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

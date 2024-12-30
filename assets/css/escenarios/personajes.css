@@ -1,0 +1,330 @@
+#escenario-piso{
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    bottom: 0px;
+    left: 0px;
+
+    background: #035865;
+    background: linear-gradient(to bottom, rgba(1,141,134,1), rgba(5,34,68,1));
+}
+
+.trofeo{
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 50px;
+    left: 50px;
+}
+.trofeo::after{
+    content: "";
+    position: absolute;
+    top: 4%;
+    border-radius: 50%;
+    filter: blur(3px);
+    background-color: rgba(255,255,255,1);
+    animation: animacion-brillo-trofeo 2s linear infinite forwards;
+}
+@keyframes animacion-brillo-trofeo {
+    0% {
+        width: 0%;
+        left: 28%;
+        height: 16%;
+        opacity: 0;
+    }
+    10% {
+        width: 15%;
+        left: 44%;
+        height: 16%;
+        opacity: 1;
+    }
+    20%, 100% {
+        width: 0%;
+        left: 71%;
+        height: 16%;
+        opacity: 0;
+    }    
+}
+.trofeo img{
+    display: block;
+    margin: 0px;
+}
+.podio{
+    position: absolute;
+    width: auto;
+    height: auto;
+    bottom: 50px;
+    right: 100px;
+}
+.podio img{
+    display: block;
+    margin: 0px;
+    height: 170px;
+    width: auto;
+}
+
+#personajes{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.personajes-shown{
+    display: block;
+}
+.personajes-hidden{
+    display: none;
+}
+
+#personajes-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.personajes-container-on{
+    top: 0px;
+}
+.personajes-container-in{
+    top: 0px;
+
+    transition: top 1s ease-in-out;
+}
+.personajes-container-out{
+    top: 50px;
+
+    transition: top 1s ease-in-out;
+}
+
+/************************/
+
+.personajes-big #presentadora{
+    width: 300px;
+    height: 508px;
+}
+.personajes-big #presentadora{
+    bottom: 30px;
+    left: 210px;
+}
+.personajes-big #personaje-1,
+.personajes-big #personaje-2,
+.personajes-big #personaje-3{
+    width: 250px;
+    height: 430px;
+    bottom: 60px;
+}
+.personajes-big .posicion-personaje-1{
+    left: 50%;
+}
+.personajes-big .posicion-personaje-2{
+    left: 83%;
+}
+.personajes-big .posicion-personaje-3{
+    left: 116%;
+}
+.personajes-big .trofeo img{
+    height: 400px;
+    margin: 0px;
+}
+.personajes-big .podio{
+    display: none;
+}
+
+
+.personajes-medium #presentadora{
+    width: 210px;
+    height: 355px;
+}
+.personajes-medium #presentadora{
+    bottom: 30px;
+    left: 210px;
+}
+.personajes-medium #personaje-1,
+.personajes-medium #personaje-2,
+.personajes-medium #personaje-3{
+    width: 160px;
+    height: 275px;
+    bottom: 30px;
+}
+.personajes-medium .posicion-personaje-1{
+    left: 40%;
+}
+.personajes-medium .posicion-personaje-2{
+    left: 61%;
+}
+.personajes-medium .posicion-personaje-3{
+    left: 82%;
+}
+.personajes-medium .trofeo img{
+    width: auto;
+    height: 300px;
+}
+.personajes-medium .podio{
+    display: none;
+}
+
+.personajes-small .personaje-mesa{
+    display: none;
+}
+.personajes-small #presentadora{
+    width: 210px;
+    height: 355px;
+}
+.personajes-small #presentadora{
+    bottom: 30px;
+    left: 370px;
+}
+.personajes-small #personaje-1,
+.personajes-small #personaje-2,
+.personajes-small #personaje-3{
+    width: 284px;
+    height: 395px;
+}
+.personajes-small .posicion-personaje-1{
+    left: 66%;
+    bottom: 210px;
+}
+.personajes-small .posicion-personaje-2{
+    left: 55%;
+    bottom: 147px;
+}
+.personajes-small .posicion-personaje-3{
+    left: 77%;
+    bottom: 122px;
+}
+.personajes-small .trofeo img{
+    width: auto;
+    height: 300px;
+}
+.personajes-small .podio{
+    display: block;
+}
+/**********************/
+
+#presentadora,
+#personaje-1,
+#personaje-2,
+#personaje-3{
+    position: absolute;
+}
+#presentadora-saca-microfono,
+#presentadora-habla,
+#presentadora-quieta,
+#personaje-1-triste,
+#personaje-1-quieto,
+#personaje-1-celebra,
+#personaje-2-triste,
+#personaje-2-quieto,
+#personaje-2-celebra,
+#personaje-3-triste,
+#personaje-3-quieto,
+#personaje-3-celebra
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+
+/****diferentes****/
+#presentadora-celebra{
+    position: absolute;
+    width: 133.33%;
+    height: 116.14%;
+    top: -16%;
+    left: -41%;
+    display: none;
+}
+
+#personaje-1-piensa,
+#personaje-2-piensa,
+#personaje-3-piensa{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: -0.5%;
+    display: none;
+}
+#personaje-1-feliz,
+#personaje-2-feliz,
+#personaje-3-feliz{
+    position: absolute;
+    width: 128%;
+    height: 116.28%;
+    top: -17.5%;
+    left: 3%;
+    display: none;
+}
+
+
+
+#presentadora-saca-microfono-canv,
+#presentadora-habla-canv,
+#presentadora-quieta-canv,
+#presentadora-celebra-canv,
+#personaje-1-triste-canv,
+#personaje-1-quieto-canv,
+#personaje-1-piensa-canv,
+#personaje-1-feliz-canv,
+#personaje-1-celebra-canv,
+#personaje-2-triste-canv,
+#personaje-2-quieto-canv,
+#personaje-2-piensa-canv,
+#personaje-2-feliz-canv,
+#personaje-2-celebra-canv,
+#personaje-3-triste-canv,
+#personaje-3-quieto-canv,
+#personaje-3-piensa-canv,
+#personaje-3-feliz-canv,
+#personaje-3-celebra-canv{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.presentadora-quieta-set div:nth-child(3){
+    display: block !important;
+}
+.presentadora-habla-set div:nth-child(2){
+    display: block !important;
+}
+.presentadora-saca-set div:nth-child(1){
+    display: block !important;
+}
+.presentadora-celebra-set div:nth-child(4){
+    display: block !important;
+}
+
+.personaje-triste-set div:nth-child(1){
+    display: block !important;
+}
+.personaje-quieto-set div:nth-child(2){
+    display: block !important;
+}
+.personaje-piensa-set div:nth-child(3){
+    display: block !important;
+}
+.personaje-feliz-set div:nth-child(4){
+    display: block !important;
+}
+.personaje-celebra-set div:nth-child(5){
+    display: block !important;
+}
+
+.personaje-mesa{
+    position: absolute;
+    width: 180%;
+    height: 100%;
+    top: 1%;
+    left: -56%;
+    display: block;
+
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-image: url(../../images/preguntas/mesa.svg);
+}

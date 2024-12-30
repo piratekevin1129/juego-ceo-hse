@@ -1,0 +1,554 @@
+:root {
+    --primary-color: #06255b;
+    --secondary-color: #0067b1;
+    --third-color: #009bdb;
+    --fourth-color: #0067af;
+    --fifth-color: #ffcd00;
+    --text-color: #06255b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("./../img/fondo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "SohoGothicPro";
+    color: var(--text-color);
+}
+
+.contenido {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    /* color: var(--primary-color); */
+    display: flex;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.titulo {
+    background-color: #003e81;
+    padding: 30px 0 0;
+}
+
+.titulo h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 6px 0 rgba(0, 0, 0, 0.8);
+}
+
+.instrucciones {
+    position: relative;
+    margin-bottom: 0.6%;
+    background-color: #003e81;
+    padding: 12px 0;
+}
+
+.instrucciones::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1920/36;
+    top: 100%;
+    left: 0;
+    background: url("../img/titulo-decoracion.png") center/cover no-repeat;
+}
+
+.instrucciones__texto {
+    color: #fff;
+    text-align: center;
+    font-size: 1.05rem;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.instrucciones__texto-pequeno {
+    font-size: 1rem;
+}
+
+.instrucciones__texto p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.interactiva {
+    position: relative;
+    margin: auto auto 6%;
+    width: 74%;
+}
+
+.interactiva__fondo {
+    width: 100%;
+}
+
+.interactiva__boton {
+    position: absolute;
+    cursor: pointer;
+    transition: left 0.5s, bottom 0.5s;
+}
+
+.interactiva__boton:nth-of-type(1) {
+    width: 7.9%;
+}
+
+.interactiva__boton:nth-of-type(2) {
+    width: 8.8%;
+}
+
+.interactiva__boton:nth-of-type(3) {
+    width: 8.7%;
+}
+
+.interactiva__boton:nth-of-type(4) {
+    width: 9%;
+}
+
+.interactiva__boton:nth-of-type(5) {
+    width: 8.8%;
+}
+
+.interactiva__boton:nth-of-type(6) {
+    width: 6.3%;
+}
+
+.interactiva__boton:nth-of-type(7) {
+    width: 7.8%;
+}
+
+.interactiva__boton[data-position="1"] {
+    left: 34%;
+    bottom: 11.1%;
+    z-index: 999;
+}
+
+.interactiva__boton[data-position="2"] {
+    left: 56%;
+    bottom: 11.1%;
+    z-index: 999;
+}
+
+.interactiva__boton[data-position="3"] {
+    left: 72%;
+    bottom: 24%;
+    z-index: 99;
+    pointer-events: none;
+}
+
+.interactiva__boton[data-position="4"] {
+    left: 19%;
+    bottom: 24%;
+    z-index: 9;
+    pointer-events: none;
+}
+
+.interactiva__boton[data-position="5"] {
+    left: 10.5%;
+    bottom: 17.3%;
+    z-index: 99;
+    pointer-events: none;
+}
+
+.interactiva__boton:hover {
+    z-index: 9999;
+}
+
+.interactiva__img {
+    transition: filter 0.5s;
+    width: 100%;
+}
+
+.interactiva__boton[data-position="3"] .interactiva__img,
+.interactiva__boton[data-position="5"] .interactiva__img {
+    filter: blur(1px) grayscale(0.4);
+}
+
+.interactiva__boton[data-position="4"] .interactiva__img {
+    filter: blur(2px) grayscale(1);
+}
+
+.interactiva__boton:hover .interactiva__img {
+    filter: drop-shadow(0 0 5px #ffcf00);
+    animation: salto 0.5s;
+}
+
+
+/* .interactiva__boton[data-info="1"] .interactiva__img {
+    width: 61.61%;
+    max-width: 175px;
+}
+
+.interactiva__boton[data-info="2"] .interactiva__img {
+    width: 46.32%;
+    max-width: 145px;
+}
+
+.interactiva__boton[data-info="3"] .interactiva__img {
+    width: 32.69%;
+    max-width: 137px;
+}
+
+.interactiva__boton[data-info="4"] .interactiva__img {
+    width: 61.70%;
+    max-width: 174px;
+}
+
+.interactiva__boton[data-info="5"] .interactiva__img {
+    width: 59.74%;
+    max-width: 190px;
+} */
+
+.interactiva__texto {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    min-width: 291px;
+    bottom: 45%;
+    background-color: #e3f8ff;
+    /* color: #fff; */
+    font-size: 1.05rem;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    /* min-height: 48px; */
+    /* display: flex; */
+    text-align: start;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 4px 6px 13px -3px #000;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+
+.interactiva__texto::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-right: 7px solid var(--secondary-color);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+}
+
+.interactiva__boton--izquierda .interactiva__texto {
+    border-left: 5px solid var(--secondary-color);
+    left: 102%;
+}
+
+.interactiva__boton--izquierda .interactiva__texto::before {
+    right: calc(100% + 5px);
+}
+
+.interactiva__boton--derecha .interactiva__texto {
+    border-right: 5px solid var(--secondary-color);
+    right: 102%;
+}
+
+.interactiva__boton--derecha .interactiva__texto::before {
+    left: calc(100% + 5px);
+    transform: rotate(180deg);
+}
+
+.interactiva__boton:hover .interactiva__texto {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes salto {
+    from,
+    to {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* .interactiva__boton:hover .interactiva__texto {
+    z-index: 9;
+    box-shadow: 4px 6px 13px -3px #000;
+} */
+
+.interactiva__flecha {
+    position: absolute;
+    width: 6%;
+    bottom: 14%;
+    cursor: pointer;
+}
+
+.interactiva__flecha--izquierda {
+    right: 96%;
+    transform: rotate(180deg);
+}
+
+.interactiva__flecha--derecha {
+    left: 96%;
+}
+
+.interactiva__flecha img {
+    width: 100%;
+    transition: filter 0.3s;
+}
+
+.interactiva__flecha:hover img {
+    filter: drop-shadow(0px 0px 2px #666);
+}
+
+
+/* ********************************** */
+
+.info {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 9999;
+}
+
+.info--activo {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info__contenido {
+    position: relative;
+    display: none;
+    width: calc(95% - 30px);
+    max-width: 1000px;
+    min-height: 216px;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+    background-color: #fff;
+    border: 4px solid var(--fourth-color);
+    z-index: 99;
+}
+
+.info__contenido--activo {
+    display: flex;
+    animation: opacity 1s;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.info__cerrar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+    z-index: 99;
+}
+
+.info__img {
+    width: 45%;
+    transition: background-image 0.5s;
+}
+
+.info__texto {
+    width: 55%;
+    padding: 15px 20px;
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.info__texto h3 {
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 7px;
+}
+
+.info__texto ul {
+    padding-left: 20px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.anexo {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.anexo__texto {
+    color: #0067af;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.anexo__boton {
+    background-color: var(--fifth-color);
+    padding: 10px 18px;
+    /* width: 90%; */
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    gap: 15px;
+    border-radius: 7px;
+    transition: box-shadow 0.3s;
+}
+
+.anexo__boton:hover {
+    box-shadow: 0px 2px 3px #000;
+}
+
+.anexo__boton::before {
+    display: block;
+    content: "";
+    aspect-ratio: 45/63;
+    width: 34px;
+}
+
+.anexo__boton--excel::before {
+    background: url('../img/icon1.png') top/cover no-repeat;
+}
+
+.anexo__boton--word::before {
+    background: url('../img/icon2.png') top/cover no-repeat;
+}
+
+.anexo__boton-texto span {
+    display: block;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+}
+
+.info__indicadores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.info__indicador {
+    width: 10px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    background-color: rgba(0, 153, 217, 0.15);
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.2s;
+}
+
+.info__indicador:hover,
+.info__indicador--activo {
+    background-color: #0099d9;
+    box-shadow: 0 0 0 4px rgba(0, 153, 217, 0.15);
+}
+
+
+/* Slider 1, 2, 6 */
+
+.info__contenido--1 .info__img {
+    background: url('../img/info1-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--2 .info__img {
+    background: url('../img/info2-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--3 .info__img {
+    background: url('../img/info3-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--4 .info__img {
+    background: url('../img/info4-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--5 .info__img {
+    background: url('../img/info5-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--6 .info__img {
+    background: url('../img/info5-1.jpg') top/cover no-repeat;
+}
+
+.info__contenido--7 .info__img {
+    background: url('../img/info5-1.jpg') top/cover no-repeat;
+}
+
+#continuar-btn {
+    position: fixed;
+    display: block;
+    outline-width: 0;
+    outline: none;
+    margin: 0px;
+    padding: 7px 15px;
+    background-color: #b3c900;
+    border: none;
+    border-radius: 3px;
+    top: 35px;
+    right: 35px;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #0b4b3f;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    transition: box-shadow 0.2s, background-color 0.2s;
+    -webkit-transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+#continuar-btn:hover {
+    background-color: #b3c900;
+    box-shadow: 0px 6px 2px -4px #6c7f06;
+    cursor: pointer;
+}
+
+.continuar-btn-off {
+    visibility: hidden;
+}
+
+.continuar-btn-on {
+    visibility: visible;
+}

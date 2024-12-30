@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../../css/fonts.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+    <link href="../assets/css/continuar.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <div id="pregunta-cont-5" class="pregunta-cont-5-out">
+        <div id="pregunta-5-enunciado"></div>
+
+        <div id="pregunta-5-body">
+            <div id="contenedor">
+                <div id="frase">
+                    <p class="subtitulo" id="pregunta-5-subtitulo"></p>
+                    <div style="clear: both;"></div>
+                    <p class="enuncioado-titulo" id="enuncioado-titulo"></p>
+                    <p id="texto-sopa"></p>
+                    <div id="palabras">
+                        <h2>Palabras a buscar:</h2>
+                    </div>
+                </div>
+
+                <div id="sopa-cont">
+                    <canvas id="rayas"></canvas>
+                    <canvas id="lienzo"></canvas>
+                    <div id="sopa"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="pregunta-5-btn" class="pregunta-continuar-btn pregunta-continuar-btn-on" onclick="clickContinuar()">Continuar</button>
+    </div>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/scripts/main.js"></script>
+    <script>
+        var over_mp3 = null
+        var click_mp3 = null
+        var wrong_mp3 = null
+        var correct_mp3 = null
+        var audio_inicio = null
+
+        actual_pregunta_data = data_preguntas[0]
+        window.onload = function(){
+            audio_inicio = new Audio('assets/audios/audio_inicio.mp3')
+            audio_inicio.onloadeddata = function(){
+                over_mp3 = new Audio('../../sounds/over.mp3')
+                over_mp3.onloadeddata = function(){
+                    click_mp3 = new Audio('../../sounds/click.mp3')
+                    click_mp3.onloadeddata = function(){
+                        wrong_mp3 = new Audio('../../sounds/wrong.mp3')
+                        wrong_mp3.onloadeddata = function(){
+                            correct_mp3 = new Audio('../../sounds/correct.mp3')
+                            correct_mp3.onloadeddata = function(){
+                                initGame()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

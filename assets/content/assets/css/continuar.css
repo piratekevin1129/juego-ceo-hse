@@ -1,0 +1,101 @@
+/***********boton continuar************/
+
+.pregunta-continuar-btn{
+    position: absolute;
+    width: 129px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/boton.png);
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    outline-width: 0;
+    border: none;
+    right: 50px;
+    top: 30px;
+
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform-origin: 100% 0%;
+    -webkit-transform-origin: 100% 0%;
+    -o-transform-origin: 100% 0%;
+
+    font-family: 'SohoGothicPro-Bold';
+    font-size: 21px;
+    color: #014343;
+    text-align: center;
+    font-weight: normal;
+    line-height: normal;
+    padding-bottom: 10px;
+    
+    transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
+    -webkit-transition: transform 0.3s, -webkit-transform 0.3s, -o-transform 0.3s;
+}
+.pregunta-continuar-btn:hover{
+    cursor: pointer;
+}
+.pregunta-continuar-btn-off{
+    visibility: hidden;
+}
+.pregunta-continuar-btn-on{
+    visibility: visible;
+    animation-name: animacion-reloj-on;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: animacion-reloj-on;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-fill-mode: forwards;
+}
+.pregunta-continuar-btn-on::after{
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 76px;
+    left: -100px;
+    top: 50%;
+    top: calc(50% - 15px);
+    -moz-top: calc(50% - 15px);
+
+    transform-origin: 100% 5%;
+    -webkit-transform-origin: 100% 5%;
+    -o-transform-origin: 100% 5%;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/boton-flecha.png);
+
+    animation-name: animacion-continuar-flecha;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    -webkit-animation-name: animacion-continuar-flecha;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+}
+@keyframes animacion-continuar-flecha{
+    0%{
+        transform: translateX(0px) scale(1);
+        -webkit-transform: translateX(0px) scale(1);
+        -o-transform: translateX(0px) scale(1);
+    }
+    50%{
+        transform: translateX(-5px) scale(1.1);
+        -webkit-transform: translateX(-5px) scale(1.1);
+        -o-transform: translateX(-5px) scale(1.1);
+    }
+    100%{
+        transform: translateX(0px) scale(1);
+        -webkit-transform: translateX(0px) scale(1);
+        -o-transform: translateX(0px) scale(1);
+    }
+}

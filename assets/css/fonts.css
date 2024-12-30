@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'SohoGothicPro-Bold';
+    src: url('fonts/SohoGothicPro-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SohoGothicPro-Light';
+    src: url('fonts/SohoGothicPro-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SohoGothicPro-Medium';
+    src: url('fonts/SohoGothicPro-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SohoGothicPro-Regular';
+    src: url('fonts/SohoGothicPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

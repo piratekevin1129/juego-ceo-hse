@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/jquery-ui.css" />
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div class="contenedor">
+    <div class="header">
+      <div>
+        <img src="./img/icono.png">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="contenedor__inferior">
+      <div class="contenedor__inferior-imagen">
+        <img src="img/image.png" alt="" />
+
+        <!-- <img class="pasos" id="img_texto_1" src="img/image_1.png" alt="" />
+          <img class="pasos" id="img_texto_2" src="img/image_2.png" alt="" />
+          <img class="pasos" id="img_texto_3" src="img/image_3.png" alt="" /> -->
+
+        <!-- <img src="img/image_movil.png" alt="" /> -->
+
+        <div class="clicks" id="click_1" data-texto="texto_1"></div>
+        <div class="clicks" id="click_2" data-texto="texto_2"></div>
+        <div class="clicks" id="click_3" data-texto="texto_3"></div>
+        <div class="clicks" id="click_4" data-texto="texto_4"></div>
+        <div class="clicks" id="click_5" data-texto="texto_5"></div>
+      </div>
+
+      <div class="mientras active">
+        <img src="img/icon_inicio.svg" alt="" />
+        <p>Haz clic en cada <span>segmento del triángulo</span> para conocer su descripción</p>
+      </div>
+
+      <div class="contenedor__inferior-texto" id="texto_1">
+        <button class="cerrar_movil" onclick="cerrartexto()"></button>
+        <p>
+          Eliminación: Quita físicamente el peligro
+        </p>
+      </div>
+
+      <div class="contenedor__inferior-texto" id="texto_2">
+        <button class="cerrar_movil" onclick="cerrartexto()"></button>
+        <p>
+          Sustitución: Sustituye el peligro
+        </p>
+      </div>
+
+      <div class="contenedor__inferior-texto" id="texto_3">
+        <button class="cerrar_movil" onclick="cerrartexto()"></button>
+        <p>
+          Controles técnicos: Aísla a la gente del peligro
+        </p>
+      </div>
+
+      <div class="contenedor__inferior-texto" id="texto_4">
+        <button class="cerrar_movil" onclick="cerrartexto()"></button>
+        <p>
+          Controles administrativos: Cambia la forma como la gente trabaja
+        </p>
+      </div>
+
+      <div class="contenedor__inferior-texto" id="texto_5">
+        <button class="cerrar_movil" onclick="cerrartexto()"></button>
+        <p>
+          EPP: Protege al trabajador con equipo de protección personal
+        </p>
+      </div>
+    </div>
+
+    <button id="continuar-btn" class="continuar-btn-off" onclick="clickContinuar()">
+      Continuar
+    </button>
+    <img class="logo" src="">
+  </div>
+
+  <div id="es_zona">
+    <div></div>
+    <div></div>
+  </div>
+
+  <audio class="audios" id="audio_inicial">
+    <source src="audios/inicial.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio class="audios" id="audio_texto_1">
+    <source src="audios/aud1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio class="audios" id="audio_texto_2">
+    <source src="audios/aud2.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio class="audios" id="audio_texto_3">
+    <source src="audios/aud3.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio class="audios" id="audio_texto_4">
+    <source src="audios/aud4.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio class="audios" id="audio_texto_5">
+    <source src="audios/aud5.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

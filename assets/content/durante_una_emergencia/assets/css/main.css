@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #06255b;
+    --secondary-color: #0067b1;
+    --third-color: #009bdb;
+    --fourth-color: #0067af;
+    --fifth-color: #ffcd00;
+    --text-color: #06255b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: middle;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url("./../img/fondo.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "SohoGothicPro";
+    color: var(--text-color);
+}
+
+.contenido {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.titulo {
+    padding: 30px 0 0;
+}
+
+.titulo h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 3px 6px 0 rgba(0, 0, 0, 0.8);
+}
+
+.instrucciones {
+    position: relative;
+    padding: 12px 0;
+}
+
+.instrucciones__texto {
+    color: #fff;
+    text-align: center;
+    font-size: 1.05rem;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.instrucciones__texto-pequeno {
+    font-size: 1rem;
+}
+
+.instrucciones__texto p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.interactiva {
+    position: relative;
+    margin: 1% auto 4%;
+    flex-grow: 1;
+    width: 74%;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.interactiva.finalizado .boton {
+    pointer-events: none;
+}
+
+.boton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 46%;
+    min-height: 73px;
+    padding: 10px 0 10px 5.5%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5) 6%, rgb(255, 255, 255) 15%);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, background-image 0.5s;
+}
+
+.boton:hover {
+    transform: scale(0.95);
+}
+
+.boton--selected {
+    pointer-events: none;
+    background: linear-gradient(to right, rgb(196, 214, 0) 8%, rgb(134, 182, 7) 25%);
+}
+
+.boton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    aspect-ratio: 35/94;
+    background: url("../img/decoracion-selected.png") center/cover no-repeat;
+}
+
+.boton--selected::before {
+    background-image: url("../img/decoracion-no-selected.png");
+}
+
+.boton__letra {
+    position: absolute;
+    height: 100%;
+    aspect-ratio: 123/124;
+    top: 0;
+    left: 0;
+    background: url("../img/selected.png") center/cover no-repeat;
+    transform: translateX(-50%) scale(1.2);
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 0.5s;
+}
+
+.boton--selected .boton__letra {
+    background-image: url("../img/no-selected.png")
+}
+
+.boton__letra span {
+    font-weight: bold;
+    font-size: 2.2rem;
+    transform: translateY(-7%);
+    text-transform: uppercase;
+}
+
+.boton__texto {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: #004692;
+    transition: color 0.5s;
+}
+
+.boton--selected .boton__texto {
+    color: #fff;
+}
+
+#continuar-btn {
+    position: fixed;
+    display: block;
+    outline-width: 0;
+    outline: none;
+    margin: 0px;
+    padding: 7px 15px;
+    background-color: #b3c900;
+    border: none;
+    border-radius: 3px;
+    top: 35px;
+    right: 35px;
+    font-family: "SohoGothicPro";
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #0b4b3f;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    transition: box-shadow 0.2s, background-color 0.2s;
+    -webkit-transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+#continuar-btn:hover {
+    background-color: #b3c900;
+    box-shadow: 0px 6px 2px -4px #6c7f06;
+    cursor: pointer;
+}
+
+.continuar-btn-off {
+    visibility: hidden;
+}
+
+.continuar-btn-on {
+    visibility: visible;
+}

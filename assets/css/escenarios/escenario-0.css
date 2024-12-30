@@ -1,0 +1,183 @@
+#escenario-0{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../images/escenario-0/fondo.jpg);
+}
+
+.escenario-0-hidden{
+    display: none;
+}
+.escenario-0-on{
+    
+}
+.escenario-0-off{
+
+}
+
+.escenario-0-rueda-1,
+.escenario-0-rueda-2{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../../images/escenario-0/rueda.png);
+}
+.escenario-0-rueda-1{
+    top: 0px;
+    left: 0px;
+    animation: animacion-rueda1-escenario-0 30s linear infinite;
+}
+@keyframes animacion-rueda1-escenario-0{
+    0%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+}
+.escenario-0-rueda-2{
+    top: 100%;
+    left: 100%;
+    animation: animacion-rueda2-escenario-0 20s linear infinite;
+}
+@keyframes animacion-rueda2-escenario-0{
+    0%{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+}
+
+.escenario-0-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: rgba(0,0,0,0) solid 1px;
+}
+
+.escenario-0-container > h1{
+    display: block;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-family: 'SohoGothicPro-Bold';
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    line-height: normal;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+#escenario-0-row{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.escenario-0-col{
+    position: relative;
+    height: auto;
+    margin: 0px 10px;
+}
+
+.escenario-0-personaje-btn{
+    position: relative;
+    width: 300px;
+    height: auto;
+    margin-bottom: 0px;
+
+    cursor: pointer;
+    transition: transform 0.25s;
+}
+#juan-btn .escenario-0-personaje-btn{
+    transform-origin: right bottom;
+}
+#ana-btn .escenario-0-personaje-btn{
+    transform-origin: center bottom;
+}
+#pedro-btn .escenario-0-personaje-btn{
+    transform-origin: left bottom;
+}
+
+#juan-btn .escenario-0-personaje-btn:hover{
+    transform: scale(1.08) rotate(-1deg);
+}
+#ana-btn .escenario-0-personaje-btn:hover{
+    transform: scale(1.08);
+}
+#pedro-btn .escenario-0-personaje-btn:hover{
+    transform: scale(1.08) rotate(1deg);
+}
+
+
+.escenario-0-personaje-btn img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}
+.escenario-0-personaje-ojos{
+    position: absolute;
+    width: 50px;
+    transform: translateX(-50%);
+    background-color: #f4a984;
+
+    animation: animacion-ojos-personaje 3s linear infinite;
+}
+#juan-btn .escenario-0-personaje-ojos{
+    left: 47%;
+    top: 20%;
+}
+#ana-btn .escenario-0-personaje-ojos{
+    left: 53%;
+    top: 18%;
+}
+#pedro-btn .escenario-0-personaje-ojos{
+    left: 53%;
+    top: 20%;
+}
+
+@keyframes animacion-ojos-personaje{
+    0%{
+        height: 0px;
+    }
+    10%{
+        height: 15px;
+    }
+    20%{
+        height: 0px;
+    }
+    100%{
+        height: 0px;
+    }
+}
+
+.escenario-0-personaje-text{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px;
+    font-family: 'SohoGothicPro-Bold';
+    font-size: 25px;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: normal;
+    line-height: normal;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Jquery-->
+    <script src="assets/js/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+
+    <!--Estilos propios-->
+    <link href="assets/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+    <title></title>
+</head>
+
+<body class="row">
+    <div id="header">
+        <p>Est</p>
+    </div>
+    <div id="contenedor">
+        <div class="img row">
+            <img src="./assets/img/img.png" alt="">
+            <div class="info off">
+                <div class="titulo row">
+                    <p></p>
+                </div>
+                <div class="txt row">
+                    <p></p>
+                </div>
+                <div class="subTitulos row"></div>
+            </div>            
+        </div>
+
+    </div>
+    
+    <div id="modal" class="col">
+        <div class="modal-animado col">
+            <!--<div class="hilo"></div>
+            <img class="clip" src="assets/img/clip.png" alt="clip">-->
+            <div class="modal-contenido col">
+                <div class="modal-cerrar row" onclick="ocultarModal()">X</div>
+                <div class="modal-titulo col">
+                    <p>Código de colores para la separación de residuos a nivel nacional</p>
+                </div>
+                <div class="modal-img" style="background-image: url(assets/img/modal.svg);"></div>
+                <!--<div class="modal-txt col">
+                    <p>
+                        En nuestra central, hemos implementado un sistema de clasificación de residuos basado en  la regulación y normatividad vigente colombiana. Los colores y sus correspondientes  categorías son los siguientes: 
+                    </p>
+                </div>-->
+                <!--<div id="decoracion-fondo">
+                    <img src="./assets/img/decoracion.png" alt="decoracion">
+                    <img src="./assets/img/decoracion.png" alt="decoracion">
+                </div>-->
+            </div>
+        </div>
+    </div>
+    
+    <button id="continuar-btn" class="off" onclick="clickContinuar()">Continuar</button>
+    <button id="sonido-btn" class="sonido-on" onclick="toggleAudio()"></button>
+    <button id="help-btn" onclick="mostrarHelp()"></button>
+</body>
+
+<audio id="audio_underground">
+    <source src="assets/audios/background.mp3" type="audio/mpeg" />
+</audio>
+<audio class="audios" id="audio">
+    <source src="" type="audio/mpeg" />
+</audio>
+<audio class="audios" id="audio_inicial">
+    <source src="assets/audios/inicio.mp3" type="audio/mpeg" />
+</audio>
+<audio class="audios" id="audio_instruccion">
+    <source src="assets/audios/instruccion.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Efectos de sonido -->
+<audio class="" id="audio_click" volume="0.5">
+    <source src="assets/audios/click.mp3" type="audio/mpeg" />
+</audio>
+<audio class="" id="audio_over" volume="0.5">
+    <source src="assets/audios/over.mp3" type="audio/mpeg" />
+</audio>
+
+</html>

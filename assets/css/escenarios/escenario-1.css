@@ -1,0 +1,137 @@
+#escenario-1{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../images/escenario-0/fondo.jpg);
+}
+
+#escenario-1-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.escenario-1-container-in{
+    top: 0px;
+
+    transition: top 1s ease-in-out;
+}
+.escenario-1-container-out{
+    top: 50px;
+
+    transition: top 1s ease-in-out;
+}
+
+.escenario-1-hidden{
+    display: none;
+}
+.escenario-1-on{
+    
+}
+.escenario-1-off{
+
+}
+
+#escenario-luces,
+#escenario-luces3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.escenario-luz{
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 0px;
+    transform-origin: left top;
+    opacity: 0.2;
+}
+.escenario-luz img{
+    display: block;
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+
+#escenario-luces div:nth-child(1){
+    left: 20%;
+    animation: animacion-luz-1-escenario 4s infinite forwards linear;
+}
+#escenario-luces div:nth-child(2){
+    left: 40%;
+    animation: animacion-luz-2-escenario 3s infinite forwards linear;
+}
+#escenario-luces div:nth-child(3){
+    left: 60%;
+    animation: animacion-luz-3-escenario 5s infinite forwards linear;
+}
+#escenario-luces div:nth-child(4){
+    left: 80%;
+    animation: animacion-luz-4-escenario 3.5s infinite forwards linear;
+}
+
+@keyframes animacion-luz-1-escenario{
+    0%{
+        transform: rotate(5deg) translateX(-50%);
+    }
+    50%{
+        transform: rotate(-5deg) translateX(-50%);
+    }
+    100%{
+        transform: rotate(5deg) translateX(-50%);
+    }
+}
+@keyframes animacion-luz-2-escenario{
+    0%{
+        transform: rotate(-6deg) translateX(-50%);
+    }
+    50%{
+        transform: rotate(4deg) translateX(-50%);
+    }
+    100%{
+        transform: rotate(-6deg) translateX(-50%);
+    }
+}
+@keyframes animacion-luz-3-escenario{
+    0%{
+        transform: rotate(-5deg) translateX(-50%);
+    }
+    50%{
+        transform: rotate(5deg) translateX(-50%);
+    }
+    100%{
+        transform: rotate(-5deg) translateX(-50%);
+    }
+}
+@keyframes animacion-luz-4-escenario{
+    0%{
+        transform: rotate(4deg) translateX(-50%);
+    }
+    50%{
+        transform: rotate(-6deg) translateX(-50%);
+    }
+    100%{
+        transform: rotate(4deg) translateX(-50%);
+    }
+}
+
+#escenario-1-video{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0px;
+}
+
+#escenario-1-vid{
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+}

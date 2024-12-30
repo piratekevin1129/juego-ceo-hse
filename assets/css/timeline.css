@@ -1,0 +1,135 @@
+#timeline{
+    position: absolute;
+    width: 100%;
+    width: calc(100% - 200px);
+    width: -moz-calc(100% - 200px);
+    height: 30px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 25px;
+    background-color: rgba(117, 92, 92, 0.5);
+
+    bottom: 30px;
+    left: 100px;
+}
+.timeline-on{
+    visibility: visible;
+}
+.timeline-off{
+    visibility: hidden;
+}
+
+#tl-play-btn{
+    outline: none;
+    outline-width: 0;
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: rgba(0,0,0,0);
+    border: none;
+    
+    transition: filter 0.2s;
+}
+#tl-play-btn:hover{
+    filter: drop-shadow(0px 0px 3px #78BC20);
+    cursor: pointer;
+}
+#tl-play-btn{
+    margin-right: 10px;
+}
+
+.tl-play-paused{
+    background-image: url(../images/icon-play.svg);
+}
+.tl-play-playing{
+    background-image: url(../images/icon-pause.svg);
+}
+.tl-play-repeat{
+    background-image: url(../images/icon-repeat.svg);
+}
+#tl-playbar{
+    position: relative;
+    display: block;
+    width: 100%;
+    width: calc(100% - (28px + 110px));
+    width: -moz-calc(100% - (28px + 110px));
+    height: 5px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #C7C7C7;
+
+    transition: height 0.2s, border 0.2s, filter 0.2s;
+}
+#tl-playbar:hover{
+    cursor: pointer;
+    height: 10px;
+    filter: drop-shadow(0px 0px 3px #B7C52F);
+}
+#tl-playbar-status{
+    position: relative;
+    width: 0%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #78BC20;
+    box-sizing: border-box;
+}
+
+#tl-duration{
+    position: relative;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    margin-left: 10px;
+    cursor: default;
+
+    font-family: 'SohoGothicPro-Medium';
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: normal;
+    font-weight: normal;
+}
+
+#cc_text{
+    position: absolute;
+    width: auto;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 2px;
+    padding: 5px 10px;
+    cursor: default;
+
+    font-family: 'SohoGothicPro-Regular';
+    font-size: 14px;
+    color: #fff;
+    font-weight: normal;
+    line-height: normal;
+    text-align: center;
+
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cc_text_off{
+    display: none;
+}
+.cc_text_on{
+    display: inline-block;
+}

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "GOTHICBI";
+    src: url("./fonts/GOTHICBI.TTF") format('truetype');
+} 
+
+@font-face {
+    font-family: "GOTHIC";
+    src: url("./fonts/GOTHIC.TTF") format('truetype');
+}
+
+@font-face {
+    font-family: "GOTHICB";
+    src: url("./fonts/GOTHICB.TTF") format('truetype');
+}

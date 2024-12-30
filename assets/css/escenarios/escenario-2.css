@@ -1,0 +1,33 @@
+#escenario-2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.escenario-2-hidden{
+    display: none;
+}
+.escenario-2-on{
+    
+}
+.escenario-2-off{
+
+}
+
+#escenario-2-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#escenario-2-fondo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-image: url(../../images/fondo_publico.jpg);
+}

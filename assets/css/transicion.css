@@ -1,0 +1,229 @@
+#transicion{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.transicion-hidden{
+    visibility: hidden;
+}
+.transicion-on{
+    
+}
+.transicion-off{
+    
+}
+
+#transicion-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#transicion-fodo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+    
+#transicion-1,
+#transicion-2{
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    background-color: rgba(0,130,137,0.7);
+}
+
+#transicion-1{
+    left: 0px;
+}
+#transicion-2{
+    width: 80%;
+}
+#transicion-2::after,
+#transicion-2::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(../images/puntos-transicion.svg);
+}
+#transicion-2::after{
+    top: 50px;
+    left: 100px;
+}
+#transicion-2::before{
+    bottom: 50px;
+    right: 100px;
+}
+
+#transicion-textos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border: rgba(0,0,0,0) solid 1px;
+}
+    
+#transicion-texto1,
+#transicion-texto3{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    font-family: 'SohoGothicPro-Bold';
+    color: rgba(0,0,0,0.5);
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: default;
+}
+#transicion-texto1{
+    font-size: 90px;
+}
+#transicion-texto3{
+    font-size: 130px;
+}
+
+#transicion-texto2{
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#transicion-texto2 span{
+    display: block;
+    font-family: 'SohoGothicPro-Bold';
+    font-size: 60px;
+    color: #ffffff;
+    text-align: left;
+    font-weight: normal;
+    line-height: normal;
+    cursor: default;
+
+    text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+
+/*********************************************/
+.transicion-on #transicion-container{
+    opacity: 0;
+    transition: opacity 1s 5s;
+}
+.transicion-off #transicion-fodo{
+    background-color: rgba(0,70,146,0);
+}
+.transicion-on #transicion-fodo{
+    background-color: rgba(0,70,146,1);
+
+    transition: background-color 0.5s;
+}
+
+.transicion-off #transicion-1{
+    width: 20%;
+    opacity: 0;
+}
+.transicion-on #transicion-1{
+    width: 0%;
+    opacity: 1;
+
+    transition: width 6s, opacity 1s;
+}
+.transicion-off #transicion-2{
+    left: 100%;
+    opacity: 0;
+}
+.transicion-on #transicion-2{
+    left: 20%;
+    opacity: 1;
+
+    transition: left 6s, opacity 1s;
+}
+.transicion-on #transicion-2::after,
+.transicion-on #transicion-2::before{
+    animation: animacion-transicion-puntos 1s infinite forwards linear;
+}
+@keyframes animacion-transicion-puntos {
+    0%{
+        opacity: 0.5;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.75;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+
+.transicion-off #transicion-texto1{
+    left: 50%;
+    opacity: 0;
+}
+.transicion-on #transicion-texto1{
+    left: 0%;
+    opacity: 1;
+
+    transition: left 6s, opacity 0.5s;
+}
+.transicion-off #transicion-texto3{
+    left: 0%;
+}
+.transicion-on #transicion-texto3{
+    left: 50%;
+    opacity: 1;
+
+    transition: left 6s, opacity 0.5s;
+}
+.transicion-off #transicion-texto2{
+    transform: scale(1);
+}
+.transicion-on #transicion-texto2{
+    transform: scale(1.2);
+
+    transition: transform 6s;
+}
+.transicion-texto2-span-out{
+    margin: 0px;
+    opacity: 0;
+}
+.transicion-texto2-span-in{
+    animation: animacion-transicion-texto2-span 0.35s linear 1 forwards;
+
+    margin: 0px 10px;
+    transition: margin 6s ease-out;
+}
+@keyframes animacion-transicion-texto2-span{
+    0%{
+        transform: scale(0) translateY(-100%);
+        opacity: 0;
+    }
+    70%{
+        transform: scale(1.2) translateY(10%);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1) translateY(0%);
+        opacity: 1;
+    }
+}

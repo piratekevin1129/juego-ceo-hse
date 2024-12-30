@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="assets/css/fonts.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/marco.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/cortina.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/transicion.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/comercial.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/pdf.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/timeline.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/interactiva.css" rel="stylesheet" type="text/css" />
+
+    <link href="assets/css/escenarios/tablero.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/personajes.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/preguntas.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/preguntas2.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/escenario-0.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/escenario-1.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/escenarios/escenario-2.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        function getE(idname){
+            return document.getElementById(idname)
+        }
+    </script>
+    <title>Juego CEO</title>
+</head>
+<body>
+    <div id="container">
+        <div id="pantalla">
+            <div id="escenarios">
+                <div id="escenario-0" class="escenario-0-hidden">
+                    <div class="escenario-0-rueda-1"></div>
+                    <div class="escenario-0-rueda-2"></div>
+                    <div class="escenario-0-container">
+                        <h1>¿Con quién deseas jugar?</h1>
+                        <div id="escenario-0-row">
+                            <div class="escenario-0-col" id="juan-btn" onclick="clickPersonaje(1)" onmouseenter="overPersonaje()">
+                                <div class="escenario-0-personaje-btn">
+                                    <img src="assets/images/escenario-0/juan.png" />
+                                    <div class="escenario-0-personaje-ojos"></div>
+                                </div>
+                                <div class="escenario-0-personaje-text">Juan</div>
+                            </div>
+                            <div class="escenario-0-col" id="ana-btn" onclick="clickPersonaje(2)" onmouseenter="overPersonaje()">
+                                <div class="escenario-0-personaje-btn">
+                                    <img src="assets/images/escenario-0/ana.png" />
+                                    <div class="escenario-0-personaje-ojos"></div>
+                                </div>
+                                <div class="escenario-0-personaje-text">Ana</div>
+                            </div>
+                            <div class="escenario-0-col" id="pedro-btn" onclick="clickPersonaje(3)" onmouseenter="overPersonaje()">
+                                <div class="escenario-0-personaje-btn">
+                                    <img src="assets/images/escenario-0/pedro.png" />
+                                    <div class="escenario-0-personaje-ojos"></div>
+                                </div>
+                                <div class="escenario-0-personaje-text">Pedro</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="escenario-1" class="escenario-1-hidden">
+                    <div id="escenario-luces">
+                        <div class="escenario-luz">
+                            <img src="assets/images/luz-escenario.png" />
+                        </div>
+                        <div class="escenario-luz">
+                            <img src="assets/images/luz-escenario.png" />
+                        </div>
+                        <div class="escenario-luz">
+                            <img src="assets/images/luz-escenario.png" />
+                        </div>
+                        <div class="escenario-luz">
+                            <img src="assets/images/luz-escenario.png" />
+                        </div>
+                    </div>
+                    <div id="escenario-1-container">
+                        <div id="escenario-1-video">
+                            <video id="escenario-1-vid" loop>
+                                <source src="assets/media/fondo_publico.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div id="escenario-2" class="escenario-2-hidden">
+                    <div id="escenario-2-container">
+                        <div id="escenario-2-fondo"></div>
+                    </div>
+                </div>
+
+
+                <div id="personajes" class="personajes-hidden">
+                    <div id="personajes-container">
+                        <div id="escenario-piso"></div>
+
+                        <div class="trofeo">
+                            <img src="assets/images/trofeo.png" />
+                        </div>
+
+                        <div class="podio">
+                            <img src="assets/images/podio.png" />
+                        </div>
+
+                        <div id="presentadora" class="presentadora-quieta-set">
+                            <div id="presentadora-saca-microfono">
+                                <canvas id="presentadora-saca-microfono-canv"></canvas>
+                            </div>
+                            <div id="presentadora-habla">
+                                <canvas id="presentadora-habla-canv"></canvas>
+                            </div>
+                            <div id="presentadora-quieta">
+                                <canvas id="presentadora-quieta-canv"></canvas>
+                            </div>
+                            <div id="presentadora-celebra">
+                                <canvas id="presentadora-celebra-canv"></canvas>
+                            </div>
+                        </div>
+
+                        <div id="personaje-1">
+                            <div id="personaje-1-triste">
+                                <canvas id="personaje-1-triste-canv"></canvas>
+                            </div>
+                            <div id="personaje-1-quieto">
+                                <canvas id="personaje-1-quieto-canv"></canvas>
+                            </div>
+                            <div id="personaje-1-piensa">
+                                <canvas id="personaje-1-piensa-canv"></canvas>
+                            </div>
+                            <div id="personaje-1-feliz">
+                                <canvas id="personaje-1-feliz-canv"></canvas>
+                            </div>
+                            <div id="personaje-1-celebra">
+                                <canvas id="personaje-1-celebra-canv"></canvas>
+                            </div>
+                            <section class="personaje-mesa"></section>
+                        </div>
+
+                        <div id="personaje-2">
+                            <div id="personaje-2-triste">
+                                <canvas id="personaje-2-triste-canv"></canvas>
+                            </div>
+                            <div id="personaje-2-quieto">
+                                <canvas id="personaje-2-quieto-canv"></canvas>
+                            </div>
+                            <div id="personaje-2-piensa">
+                                <canvas id="personaje-2-piensa-canv"></canvas>
+                            </div>
+                            <div id="personaje-2-feliz">
+                                <canvas id="personaje-2-feliz-canv"></canvas>
+                            </div>
+                            <div id="personaje-2-celebra">
+                                <canvas id="personaje-2-celebra-canv"></canvas>
+                            </div>
+                            <section class="personaje-mesa"></section>
+                        </div>
+
+                        <div id="personaje-3">
+                            <div id="personaje-3-triste">
+                                <canvas id="personaje-3-triste-canv"></canvas>
+                            </div>
+                            <div id="personaje-3-quieto">
+                                <canvas id="personaje-3-quieto-canv"></canvas>
+                            </div>
+                            <div id="personaje-3-piensa">
+                                <canvas id="personaje-3-piensa-canv"></canvas>
+                            </div>
+                            <div id="personaje-3-feliz">
+                                <canvas id="personaje-3-feliz-canv"></canvas>
+                            </div>
+                            <div id="personaje-3-celebra">
+                                <canvas id="personaje-3-celebra-canv"></canvas>
+                            </div>
+                            <section class="personaje-mesa"></section>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pregunta-container" class="pregunta-container-off">
+                    <div class="pregunta-data">
+                        <p id="pregunta-title"></p>
+                        <div id="pregunta-opciones"></div>
+                    </div>
+                </div>
+
+                <div id="pregunta3-container" class="pregunta3-container-off">
+                    <div class="pregunta3-info">
+                        <img src="" id="pregunta3-img" />
+                    </div>
+                    <div class="pregunta3-data">
+                        <p id="pregunta3-title"></p>
+                        <div id="pregunta3-opciones"></div>
+                    </div>
+                </div>
+
+                <div id="pregunta2-container" class="pregunta2-container-off">
+                    <div id="pregunta2-col">
+                        <p id="pregunta2-title"></p>
+                        <div class="pregunta2-data">
+                            <div id="pregunta2-opciones"></div>
+                        </div>
+                        <div class="pregunta2-marco">
+                            <div class="pregunta-marco-container">
+                                <div id="pregunta2-marco-container-fondo">
+                                    <div id="pregunta2-marco-container-images">
+                                        <img id="pregunta2-marco-container-img" src="" />
+                                        <img src="assets/images/preguntas/mesa.svg" />
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+
+                <div id="respuesta-container" class="respuesta-container-off respuesta-container-out">
+                    <div id="respuesta-texto"></div> 
+                </div>
+
+                <div id="tablero" class="tablero-off">
+                    <div class="tablero-container">
+                        <p>¿Cuánto sabes de nuestro Sistema Integrado de Gestión HSE?</p>
+                        <h6>V/S</h6>
+                        <div id="tablero-col"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="interactiva" class="interactiva-off">
+                <div id="interactiva-content" class="interactiva-content-off">
+                    <div id="interactiva-content-loader"></div>
+                    <iframe id="interactiva-data" border="0" scroll="no" src=""></iframe>
+                </div>
+            </div>
+
+            <div id="comercial" class="comercial-off">
+                <div id="comercial-video" class="comercial-video-off">
+                    <div id="comercial-video-loader"></div>
+                    <video id="comercial-vid">
+                        <source id="comercial-vid-src" src="" type="video/mp4" />
+                    </video>
+                </div>
+                <div id="timeline" class="timeline-off">
+                    <button id="tl-play-btn" class="tl-play-playing" onclick="handleVideo()"></button>
+                    <div id="tl-playbar" onclick="clickTimeline(event)">
+                        <div id="tl-playbar-status"></div>
+                    </div>
+                    <div id="tl-duration">00:00/00:00</div>
+                </div>
+            </div>
+
+            <div id="cc_text" class="cc_text_off"></div>
+
+            <div id="pdf" class="pdf-off">
+                <div id="pdf-box">
+                    <h1 id="pdf-title"></h1>
+                    <a id="pdf-link" href="" target="_blank">
+                        <img src="assets/images/pdf.png" />
+                    </a>
+                    <button type="button" id="pdf-button">Continuar</button>
+                </div>
+            </div>
+
+            <div id="loader" class="loader-state-1 loader-on">
+                <div id="loader-clip">
+                    <div id="loader-icon"></div>
+                    <div id="loader-text">Cargando</div>
+                </div>
+                <div id="loader-start-text">Toca la pantalla para encender el TV</div>
+            </div>
+
+            <div id="transicion" class="transicion-off transicion-hidden">
+                <div id="transicion-container">
+                    <div id="transicion-fodo"></div>
+                    
+                    <div id="transicion-2"></div>
+                    <div id="transicion-1"></div>
+                    
+                    <div id="transicion-textos">
+                        <div id="transicion-texto1"></div>
+                        <div id="transicion-texto2"></div>
+                        <div id="transicion-texto3"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cortina" class="cortina-off">
+                <div id="cortina-1"></div>
+                <div id="cortina-2"></div>
+            </div>
+
+            <div id="encendido" class="encendido-off encendido-hidden">
+                <div id="encendido-1"></div>
+                <div id="encendido-2"></div>
+                <div id="encendido-bola"></div>
+                <div id="encendido-linea"></div>
+            </div>
+        </div>
+
+        <div id="marco">
+            <div id="marco-borde"></div>
+            <img id="marco-destello" src="assets/images/tv-destello.png" />
+            <div id="marco-footer">
+                <h1 id="marco-footer-title">Inducción HSE</h1>
+                <div id="marco-footer-marca">
+                    <img src="assets/images/tv-logo.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="marco-footer-botones">
+            <button id="saltar-btn" class="marco-footer-boton" onclick="clickSaltar()">adelantar</button>
+            <button id="toggle-btn" class="marco-footer-boton" onclick="toggleJuego(this)">parar</button>
+        </div>
+
+    </div>
+
+    <script src="assets/data.js"></script>
+    <script src="assets/data_cc.js"></script>
+    <script src="assets/scripts/animation.js"></script>
+    <script src="assets/scripts/loader.js"></script>
+    <script src="assets/scripts/transicion.js"></script>
+    <script src="assets/scripts/comercial.js"></script>
+    <script src="assets/scripts/pdf.js"></script>
+    <script src="assets/scripts/informacion.js"></script>
+    <script src="assets/scripts/interactiva.js"></script>
+    <script src="assets/scripts/cortina.js"></script>
+    <script src="assets/scripts/timeline.js"></script>
+    
+    <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/escenarios/escenario-1.js"></script>
+    <script src="assets/scripts/escenarios/escenario-2.js"></script>
+
+    <script src="assets/scripts/preguntas.js"></script>
+    
+    <script>
+
+        var audio_final = null
+        var audio_ending = null
+        var audio_intro = null
+        var audio_intro2 = null
+        var audio_intro_aplausos = null
+        var audio_bienvenida = null
+        var audio_transicion = null
+        var audio_cortina = null
+        var audio_over = null
+        var audio_click = null
+        var audio_tv_encendido_on = null
+        var audio_tv_encendido_off = null
+        var audio_correcto = null
+        var audio_incorrecto = null
+        var audio_bien_aplausos = null
+        var audio_suspenso = null
+        var audio_susurros = null
+        var audio_booh = null
+
+        var audio_bien1 = null
+        var audio_bien2 = null
+        var audio_mal1 = null
+        var audio_mal2 = null
+        var audio_mal3 = null
+        var audio_mal4 = null
+        var audio_next1 = null
+        var audio_next2 = null
+        var audio_next3 = null
+
+        var juan_bien = null
+        var ana_bien = null
+        var pedro_bien = null
+
+        //audios externos
+        var retroalimentacion_interactiva_3 = null
+        var retroalimentacion_interactiva_4 = null
+        var retroalimentacion_interactiva_8 = null
+
+        var audios_bien = []
+        var audios_mal = []
+        var audios_next = []
+
+        var personaje_actual = -1
+
+        var animacion_encendido = null
+        window.onload = function(){
+            loadTrack({src: 'assets/audios/intro.mp3', callBack: function (data) {
+                audio_intro = data
+            }})
+
+            loadTrack({src: 'assets/audios/final.mp3', callBack: function (data) {
+                audio_final = data
+            }})
+                
+            loadTrack({src: 'assets/audios/intro2.mp3', callBack: function (data) {
+                audio_intro2 = data
+            }})
+            
+            loadTrack({src: 'assets/audios/bienvenida.mp3', callBack: function (data) {
+                audio_bienvenida = data
+            }})
+            
+
+            loadTrack({src: 'assets/audios/bien-1.mp3', callBack: function (data) {
+                audio_bien1 = data
+                loadTrack({src: 'assets/audios/bien-2.mp3', callBack: function (data) {
+                    audio_bien2 = data
+                    audios_bien = [audio_bien1,audio_bien2]
+                }})
+            }})
+
+            loadTrack({src: 'assets/audios/mal-1.mp3', callBack: function (data) {
+                audio_mal1 = data
+                loadTrack({src: 'assets/audios/mal-2.mp3', callBack: function (data) {
+                    audio_mal2 = data
+                    loadTrack({src: 'assets/audios/mal-3.mp3', callBack: function (data) {
+                        audio_mal3 = data
+                        loadTrack({src: 'assets/audios/mal-4.mp3', callBack: function (data) {
+                            audio_mal4 = data
+                            audios_mal = [audio_mal1,audio_mal2,audio_mal3,audio_mal4]
+                        }}) 
+                    }})
+                }})
+            }})
+
+            loadTrack({src: 'assets/audios/next-1.mp3', callBack: function (data) {
+                audio_next1 = data
+                loadTrack({src: 'assets/audios/next-2.mp3', callBack: function (data) {
+                    audio_next2 = data
+                    loadTrack({src: 'assets/audios/next-3.mp3', callBack: function (data) {
+                        audio_next3 = data
+
+                        audios_next = [audio_next1,audio_next2,audio_next3]
+                    }})
+                }})
+            }})
+
+            
+            loadTrack({src: 'assets/sounds/ending.mp3', callBack: function (data) {
+                audio_ending = data
+                audio_ending.loop = true
+            }})
+                
+            loadTrack({src: 'assets/sounds/intro_aplausos.mp3', callBack: function (data) {
+                audio_intro_aplausos = data
+            }})
+
+            loadTrack({src: 'assets/sounds/susurros.mp3', callBack: function (data) {
+                audio_susurros = data
+                audio_susurros.loop = true
+            }})
+            
+            loadTrack({src: 'assets/sounds/transicion.mp3', callBack: function (data) {
+                audio_transicion = data
+            }})
+                
+            loadTrack({src: 'assets/sounds/cortina.mp3', callBack: function (data) {
+                audio_cortina = data
+            }})
+                
+            loadTrack({src: 'assets/sounds/click.mp3', callBack: function (data) {
+                audio_click = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/over.mp3', callBack: function (data) {
+                audio_over = data
+            }})
+                
+            loadTrack({src: 'assets/sounds/tv-turn-off.mp3', callBack: function (data) {
+                audio_tv_encendido_off = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/tv-turn-on.mp3', callBack: function (data) {
+                audio_tv_encendido_on = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/bien_aplausos.mp3', callBack: function (data) {
+                audio_bien_aplausos = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/correcto.mp3', callBack: function (data) {
+                audio_correcto = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/incorrecto.mp3', callBack: function (data) {
+                audio_incorrecto = data
+            }})
+            
+            loadTrack({src: 'assets/sounds/suspenso.mp3', callBack: function (data) {
+                audio_suspenso = data
+                audio_suspenso.loop = true
+            }})
+        
+            loadTrack({src: 'assets/sounds/booh.mp3', callBack: function (data) {
+                audio_booh = data
+            }})
+                    
+            loadTrack({src: 'assets/content/sopa/assets/audios/retroalimentacion.mp3', callBack: function (data) {
+                retroalimentacion_interactiva_3 = data
+                loadTrack({src: 'assets/content/emparejamiento/assets/audios/retroalimentacion_2.mp3', callBack: function (data) {
+                    retroalimentacion_interactiva_4 = data
+                    loadTrack({src: 'assets/content/emparejamiento/assets/audios/retroalimentacion_3.mp3', callBack: function (data) {
+                        retroalimentacion_interactiva_8 = data
+
+                        loadTrack({src: 'assets/audios/juan_bien.mp3', callBack: function (data) {
+                            juan_bien = data
+                            loadTrack({src: 'assets/audios/ana_bien.mp3', callBack: function (data) {
+                                ana_bien = data
+                                loadTrack({src: 'assets/audios/pedro_bien.mp3', callBack: function (data) {
+                                    pedro_bien = data
+                
+                                    loadGame()
+                                }})
+                            }})
+                        }})
+                    }})
+                }})
+            }})
+        }
+
+        function startGame(){
+            getE('loader').className = 'loader-state-2 loader-on'
+            getE('container').onclick = function(){
+                getE('container').onclick = null
+
+                getE('encendido').className = 'encendido-on'
+                audio_tv_encendido_on.play()
+                getE('escenario-0').className = 'escenario-0-on'
+                getE('loader').className = 'loader-state-2 loader-off'
+
+                
+
+                animacion_encendido = setTimeout(function(){
+                    clearTimeout(animacion_encendido)
+                    animacion_encendido = null
+
+                    audio_bienvenida.play()
+
+                    //se conserva on para que las animaciones empiecen bien cuando se ponga en off
+                    getE('encendido').className = 'encendido-on encendido-hidden'
+                },1000)
+            }
+        }
+
+        /////////////////
+        var audio_global = null;
+
+        function clickSaltar(){
+            if(audio_global!=null){
+                audio_global.currentTime = (audio_global.duration-0.2)
+            }
+        }
+        
+        var status_juego = true
+        function toggleJuego(btn){
+            if(audio_global!=null){
+                if(status_juego){
+                    audio_global.pause()
+                    btn.innerHTML = 'seguir'
+                }else{
+                    audio_global.play()
+                    btn.innerHTML = 'parar'
+                }
+                status_juego = !status_juego
+            }
+        }
+    </script>
+</body>
+</html>

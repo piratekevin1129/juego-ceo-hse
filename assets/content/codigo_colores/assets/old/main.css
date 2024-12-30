@@ -1,0 +1,459 @@
+/* ---------- BASE ---------- */
+
+/* Tamaño del scroll */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Estilos barra (thumb) de scroll */
+*::-webkit-scrollbar-thumb {
+  background: hsla(185, 95%, 24%, 0.5);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: hsla(185, 95%, 24%, 1);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos track de scroll */
+*::-webkit-scrollbar-track {
+  background: hsla(195, 35%, 82%, 0.1);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-track:hover {
+  cursor: pointer;
+  background: hsla(195, 35%, 82%, 0.8);
+}
+
+* {
+  transition: 0.5s all;
+}
+
+p {
+  margin: auto;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  margin: 0px auto;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: "GOTHIC";
+}
+
+#header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "GOTHICB";
+  color: #cc6c61;
+  font-size: 50px;
+  z-index: 1;
+}
+
+#contenedor {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+/* ---------- img ---------- */
+.img {
+  height: 100%;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.img img:first-child {
+  max-height: 100%;
+}
+
+/* ---------- info ---------- */
+
+.info {
+  width: 30.6%;
+  aspect-ratio: 587/245;
+  background-color: #fceada;
+  color: #000;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  font-size: 21px;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.titulo {
+  width: calc(100% - 20px);
+  background-color: transparent;
+  color: #795c42;
+  font-family: "GOTHICB";
+  padding: 7px 0px;
+  margin: auto;
+  margin-top: 7.5px;
+  font-size: 24px;
+}
+
+.titulo p {
+  padding: 0 10px;
+}
+
+.subTitulos {
+  width: 100%;
+  height: 20px;
+  font-family: "GOTHICBI";
+}
+
+.subTitulos div {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: solid 5px transparent;
+  background-color: #e2cebc;
+  border: solid 0px;
+  opacity: 0.5;
+  margin: auto 5px;
+  cursor: pointer;
+}
+
+.subTitulos div:first-child {
+  margin-left: auto;
+}
+
+.subTitulos div:last-child {
+  margin-right: auto;
+}
+
+.subTitulos div.activo {
+  opacity: 1;
+  border: solid 5px #e2cebc;
+  background-color: #795c42;
+}
+
+.txt {
+  height: calc(100% - 85px);
+  width: calc(100% - 20px * 2);
+  font-family: "GOTHIC";
+  overflow-y: auto;
+  align-items: flex-start !important;
+  padding: 0px 20px;
+  text-align: justify;
+}
+
+/* ---------- Personaje ---------- */
+
+.personaje {
+  position: absolute;
+  cursor: pointer;
+  /*filter: grayscale(0.5) brightness(0.9);*/
+}
+
+.personaje.active {
+  pointer-events: none;
+  /*filter: grayscale(0) brightness(1.05);*/
+}
+
+.personaje.visto {
+  pointer-events: none;
+  /*filter: grayscale(0) brightness(1);*/
+}
+
+.personaje:hover {
+  /*scale: 1.05;
+  filter: grayscale(0.25) brightness(0.95);*/
+  filter: grayscale(0) brightness(0.8);
+}
+
+/* ------------------------------------------ */
+
+.col,
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.off {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ------------------------------------------ */
+
+#continuar-btn {
+  position: absolute;
+  top: 5px;
+  right: 60px;
+  width: auto;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #cc6c61;
+  color: #ffffff;
+  border: none;
+  margin: 0px;
+  padding: 0px 10px;
+  outline: none;
+  outline-width: 0;
+  font-size: 21px;
+  font-family: "GOTHICBI";
+  z-index: 9;
+}
+
+#sonido-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #cc6c61;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  outline-width: 0;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
+  background-image: url(../img/sonido-on-icon.png);
+  z-index: 9;
+  transition: 1s all;
+}
+
+#help-btn {
+  position: absolute;
+  top: 60px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #cc6c61;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  outline: none;
+  outline-width: 0;
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: center;
+  background-image: url(../img/interrogacion-fff.png);
+  z-index: 1;
+  transition: 1s all;
+}
+
+#continuar-btn:hover,
+#sonido-btn:hover,
+#help-btn:hover {
+  cursor: pointer;
+  transform: scale(1.025);
+  filter: brightness(1.1);
+}
+
+.sonido-off {
+  opacity: 0.7;
+}
+
+/* ---------- modal ---------- */
+#modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff85;
+  z-index: 2;
+}
+
+.modal-animado {
+  position: absolute;
+  width: fit-content;
+  height: 100%
+}
+
+/*
+.hilo {
+  height: 45%;
+  width: 1.5px;
+  background-color: #5c5c5cc0;
+  position: absolute;
+  top: 0;
+}
+
+.clip {
+  width: 32px;
+  margin: 0;
+  margin-bottom: -7px;
+  z-index: 1;
+}
+
+.clip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  height: 1000px;
+  width: 1px;
+}
+  */
+
+.modal-contenido {
+  height: 80%;
+  padding: 30px 0;
+  width: 90%;
+  max-width: 650px;
+  background-color: #fff;
+  margin: 0;
+  position: relative;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.384));
+}
+
+.modal-cerrar {
+  position: absolute;
+  background-color: #cc6c61;
+  color: #fff;
+  top: 2.5px;
+  right: 2.5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 35px;
+  font-family: "GOTHIC";
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-cerrar:hover{
+  scale: 1.01;
+  filter: brightness(1.2);
+}
+
+.modal-titulo {
+  width: 85%;
+  height: auto;
+  text-align: center;
+  color: #037079;
+  font-size: 24px;
+  font-family: "GOTHICB";
+  display: flex;
+  z-index: 1;
+  margin: auto;
+}
+
+.modal-titulo p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.modal-img {
+  width: 90%;
+  height: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  margin: auto;
+}
+
+.modal-txt {
+  width: 85%;
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  color: #000000;
+  font-size: 21px;
+  display: flex;
+  z-index: 1;
+  margin: auto;
+}
+
+.modal-txt p {
+  margin: auto;
+}
+
+.modal-txt span {
+  color: #cc6c61;
+  font-family: "GOTHICBI";
+}
+
+/*
+#decoracion-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#decoracion-fondo img {
+  width: 35%;
+  position: absolute;
+}
+
+#decoracion-fondo img:nth-child(1) {
+  top: -9%;
+  left: -4%;
+}
+
+#decoracion-fondo img:nth-child(2) {
+  bottom: -9%;
+  right: -4%;
+  rotate: 180deg;
+}*/
+
+/* ------------------------------------------ */
+
+.fadeOutUp {
+  animation: fadeOutUp 1.3s ease-in-out;
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown 1.3s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
