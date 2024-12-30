@@ -1,2 +1,3 @@
-assets/media/*
-fuentes
+assets/media/
+!assets/media/index.html
+fuentes/
