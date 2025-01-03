@@ -316,6 +316,10 @@
             <button id="toggle-btn" class="marco-footer-boton" onclick="toggleJuego(this)">parar</button>
         </div>
 
+        <div id="fullscreen-window" class="fullscreen-off" onclick="establecerFullScreen()">
+            <p>Haz clic para volver al modo fullscreen</p>
+        </div>
+
     </div>
 
     <script src="assets/data.js"></script>
@@ -331,6 +335,7 @@
     <script src="assets/scripts/timeline.js"></script>
     
     <script src="assets/scripts/main.js"></script>
+    <script src="assets/scripts/fullscreen.js"></script>
     <script src="assets/scripts/escenarios/escenario-1.js"></script>
     <script src="assets/scripts/escenarios/escenario-2.js"></script>
 
@@ -521,14 +526,20 @@
         function startGame(){
             getE('loader').className = 'loader-state-2 loader-on'
             getE('container').onclick = function(){
+                if(document.fullscreenElement){
+                    document.exitFullscreen()
+                    return;
+                }else{
+                    document.body.requestFullscreen();
+                    document.body.addEventListener('fullscreenchange', detectFullScreen, true)
+                }
+
                 getE('container').onclick = null
 
                 getE('encendido').className = 'encendido-on'
                 audio_tv_encendido_on.play()
                 getE('escenario-0').className = 'escenario-0-on'
                 getE('loader').className = 'loader-state-2 loader-off'
-
-                
 
                 animacion_encendido = setTimeout(function(){
                     clearTimeout(animacion_encendido)

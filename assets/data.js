@@ -1,5 +1,5 @@
-var pregunta_actual = (30-1)
-var skip_intro = true;
+var pregunta_actual = (1-1)
+var skip_intro = false;
 
 var data_preguntas = [
     {
