@@ -13,5 +13,6 @@ function establecerFullScreen(){
         return;
     }else{
         document.body.requestFullscreen();
+        getE('fullscreen-window').className = 'fullscreen-off';
     }
 }

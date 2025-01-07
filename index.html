@@ -526,12 +526,14 @@
         function startGame(){
             getE('loader').className = 'loader-state-2 loader-on'
             getE('container').onclick = function(){
-                if(document.fullscreenElement){
-                    document.exitFullscreen()
-                    return;
-                }else{
-                    document.body.requestFullscreen();
-                    document.body.addEventListener('fullscreenchange', detectFullScreen, true)
+                if(fullscreen_enabled){
+                    if(document.fullscreenElement){
+                        document.exitFullscreen()
+                        return;
+                    }else{
+                        document.body.requestFullscreen();
+                        document.body.addEventListener('fullscreenchange', detectFullScreen, true)
+                    }
                 }
 
                 getE('container').onclick = null

@@ -63,12 +63,11 @@ html,body{
 #fullscreen-window p{
     display: block;
     font-family: 'SohoGothicPro-Regular';
-    font-size: 15px;
+    font-size: 18px;
     color: #ffffff;
     font-weight: normal;
     line-height: normal;
     margin: 0px;
     padding: 0px;
+    cursor: default;
 }
-    <p>Haz clic para volver </p>
-</div>

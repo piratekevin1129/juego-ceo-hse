@@ -1,5 +1,6 @@
 var pregunta_actual = (1-1)
 var skip_intro = false;
+var fullscreen_enabled = false;
 
 var data_preguntas = [
     {
